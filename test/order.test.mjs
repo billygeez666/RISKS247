@@ -3,7 +3,8 @@ import { handle, validate, orderId } from "../netlify/functions/order.mjs";
 const base = { key: "abcdefgh-1234", qty: "10", name: "Jānis Bērziņš", phone: "+371 20000000", city: "Ventspils", address: "Tirgus 1", notes: "", website: "" };
 const req = b => new Request("https://x/api/order", { method: "POST", headers: { "content-type": "application/json", "x-nf-client-connection-ip": String(Math.random()) }, body: JSON.stringify(b) });
 const env = (o = {}) => ({ ORDERS_MODE: "test", ORDER_SECRET: "s", ...o });
-test("default mode is off (503)", async () => assert.equal((await handle(req(base), {})).status, 503));
+test("default mode is test and never calls Make", async () => { let n=0; const r = await handle(req(base), {}, async()=>{n++;return {ok:true}}); assert.equal(r.status, 200); assert.equal((await r.json()).test, true); assert.equal(n, 0); });
+test("off mode refuses (503)", async () => assert.equal((await handle(req(base), {ORDERS_MODE:"off"})).status, 503));
 for (const q of ["10","15","20","25","30","35","40","45","50"]) test("price "+q, async () => {
   const j = await (await handle(req({ ...base, qty: q }), env())).json(); assert.equal(j.payload.total_eur, Number(q)*40); });
 test("ignores client price", async () => { const j = await (await handle(req({ ...base, total: 1, price: 1 }), env())).json(); assert.equal(j.payload.total_eur, 400); });

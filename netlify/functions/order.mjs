@@ -1,10 +1,12 @@
 // POST /api/order  - validates the order, prices it SERVER-SIDE, creates the order ID, forwards to Make.
-// Env: ORDERS_MODE = off (default) | test | live ; MAKE_WEBHOOK_URL ; MAKE_API_KEY (optional) ; ORDER_SECRET
+// Env: ORDERS_MODE = test (default in this preview) | test | live ; MAKE_WEBHOOK_URL ; MAKE_API_KEY (optional) ; ORDER_SECRET
 import { createHmac } from "node:crypto";
 
 export const PRICE_PER_M3 = 40, MIN = 10, MAX = 50, STEP = 5;
 const CITIES = ["Ventspils", "Kuldīga", "Talsi", "Liepāja", "Cita vieta"];
 const ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+// Preview build: default is "test" (never calls Make). Set ORDERS_MODE=live in Netlify env vars to go live; "off" refuses orders.
+const DEFAULT_MODE = "test";
 const hits = new Map(); // best-effort per-instance rate limit
 
 const json = (status, body) => new Response(JSON.stringify(body), {
@@ -41,7 +43,7 @@ export function validate(b) {
 
 export async function handle(req, env = process.env, fetchImpl = fetch) {
   if (req.method !== "POST") return json(405, { ok: false, error: "Method not allowed" });
-  const mode = env.ORDERS_MODE || "off";
+  const mode = env.ORDERS_MODE || DEFAULT_MODE;
   if (mode === "off") return json(503, { ok: false, error: "Ordering is paused." });
   const ip = (req.headers.get("x-nf-client-connection-ip") || "unknown");
   const t = Date.now(), arr = (hits.get(ip) || []).filter(x => t - x < 600000);

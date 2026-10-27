@@ -7,7 +7,7 @@
 ## Environment variables (Netlify > Site settings > Environment variables; never commit)
 | Name | Value |
 |---|---|
-| ORDERS_MODE | `off` (default, orders refused) / `test` (validates, never calls Make) / `live` |
+| ORDERS_MODE | `test` (default: validates, never calls Make) / `off` (refuse) / `test` (validates, never calls Make) / `live` |
 | MAKE_WEBHOOK_URL | Make webhook URL (hook 3957587) |
 | MAKE_API_KEY | key if hook API-key auth is enabled (header x-make-apikey) |
 | ORDER_SECRET | long random string |
