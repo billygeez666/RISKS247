@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="lv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>RISKS247 | Malka ar piegādi Ventspilī un apkārtnē</title>
+<meta name="description" content="Malka ar piegādi Ventspilī un apkārtnē. 40 € par beramkubikmetru, pasūtījums no 10 ber. m³.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Manrope:wght@400;500;700&display=swap">
+<style>
+/* Layout: dark charcoal single-theme page. Left-aligned hero with a growth-ring mark that draws once on load; prices as a quantity ladder; one order form. */
+:root{
+  --ink:#14171a; --coal:#1b2024; --forest:#1f3a2b; --forest-2:#2f5b42;
+  --wood:#c8a35a; --wood-dim:#8a6f35; --cream:#efe8da; --muted:#aaa89d;
+  --line:rgba(239,232,218,.14); --amber:#e0b341; --err:#ff9b8a;
+  --display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-bottom:84px}
+.wrap{max-width:1120px;margin:0 auto}
+h1,h2,h3,.brand,.total strong,.card .p{font-kerning:none;font-feature-settings:"kern" 0,"liga" 0,"calt" 0,"ccmp" 1;font-family:var(--display);font-weight:600;line-height:1.1;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--wood);outline-offset:3px;border-radius:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid transparent;
+  font:700 15px/1 var(--body);cursor:pointer;text-decoration:none;transition:background .2s,transform .2s,border-color .2s}
+.btn-primary{background:var(--wood);color:#1a1409}
+.btn-primary:hover{background:#d6b370}
+.btn-ghost{border-color:var(--line);color:var(--cream);background:transparent}
+.btn-ghost:hover{border-color:var(--wood)}
+.btn:disabled{opacity:.6;cursor:progress}
+
+
+/* header */
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.brand{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:.01em;text-decoration:none}
+.brand b{color:var(--wood);font-weight:600}
+nav.main{display:flex;gap:26px;align-items:center}
+nav.main a{text-decoration:none;color:var(--muted);font-size:15px;font-weight:500}
+nav.main a:hover{color:var(--cream)}
+nav.main a.btn{color:#1a1409;font-weight:700}
+@media(max-width:720px){nav.main a:not(.btn){display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding-block:56px 72px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:32px;align-items:center}
+.hero h1{font-size:clamp(38px,6.2vw,68px);letter-spacing:-.015em}
+.hero .lead{margin-top:20px;max-width:34em;color:#d4cdbd;font-size:18px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:44px;border-top:1px solid var(--line)}
+.facts div{padding:16px 18px 0 0}
+.facts dt{color:var(--muted);font-size:13px}
+.facts dd{margin:4px 0 0;font-weight:700;font-size:15px}
+@media(max-width:720px){.hero-grid{grid-template-columns:1fr}.facts{grid-template-columns:1fr}.facts div{padding:12px 0;border-bottom:1px solid var(--line)}}
+.rings{width:100%;max-width:460px;justify-self:end;aspect-ratio:1;display:block}
+@media(max-width:720px){.rings{position:absolute;right:-90px;top:20px;width:300px;opacity:.28;z-index:0}.hero-grid>div{position:relative;z-index:1}}
+.rings circle{fill:none;stroke-linecap:round}
+.rings circle{animation:draw 1.8s cubic-bezier(.2,.7,.2,1) backwards}
+@keyframes draw{from{stroke-dasharray:1;stroke-dashoffset:1}to{stroke-dasharray:1;stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.rings circle{animation:none}html{scroll-behavior:auto}}
+
+/* sections */
+section{padding-block:68px;border-top:1px solid var(--line)}
+section h2{font-size:clamp(28px,4vw,40px)}
+.sub{margin-top:12px;color:var(--muted);max-width:38em}
+
+/* prices */
+.band{background:var(--coal);margin:0 calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}
+@media(max-width:820px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.card{display:flex;flex-direction:column;gap:14px;padding:22px 20px;background:var(--ink);border:1px solid var(--line);border-radius:14px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--wood);transform:translateY(-2px)}
+.card .q{color:var(--muted);font-weight:500}
+.card .p{font-family:var(--display);font-size:clamp(32px,4.4vw,44px);font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.card .u{color:var(--muted);font-size:14px;margin-top:-6px}
+.card .btn{margin-top:auto;min-height:44px;width:100%}
+.card.min{border-color:var(--forest-2);background:linear-gradient(180deg,rgba(47,91,66,.28),var(--ink))}
+.card.min .tag{align-self:flex-start;font-size:12px;font-weight:700;background:var(--forest-2);color:var(--cream);padding:3px 10px;border-radius:999px}
+.card.big{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;border-style:dashed}
+.card.big h3{font-size:24px}
+.card.big .btn{margin-top:0;width:auto}
+.note{margin-top:18px;color:var(--muted);font-size:14px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:34px;counter-reset:s;padding:0;list-style:none}
+@media(max-width:720px){.steps{grid-template-columns:1fr}}
+.steps li{counter-increment:s;border-top:2px solid var(--wood-dim);padding-top:16px}
+.steps li::before{content:counter(s);font-family:var(--display);font-size:34px;color:var(--wood);display:block;line-height:1;margin-bottom:10px}
+.steps h3{font-size:20px;margin-bottom:6px}
+.steps p{color:var(--muted)}
+
+/* product + delivery */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;margin-top:6px}
+@media(max-width:820px){.two{grid-template-columns:1fr;gap:24px}}
+.two p+p{margin-top:12px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;padding:0;list-style:none}
+.chips li{border:1px solid var(--forest-2);background:rgba(47,91,66,.2);padding:8px 16px;border-radius:999px;font-weight:600;font-size:15px}
+.fig{margin:6px 0 0;background:linear-gradient(180deg,var(--coal),var(--ink));border:1px solid var(--line);border-radius:16px;padding:18px}
+.fig svg{width:100%;height:auto;display:block}
+.fig figcaption{margin-top:8px;color:var(--muted);font-size:12px}
+.slot{display:flex;align-items:center;justify-content:center;text-align:center;min-height:220px;margin-top:6px}
+
+/* form */
+.formwrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:44px;align-items:start}
+@media(max-width:900px){.formwrap{grid-template-columns:1fr;gap:26px}}
+form,.done{background:var(--coal);border:1px solid var(--line);border-radius:18px;padding:26px 22px}
+.f{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.f label{font-weight:700;font-size:14px}
+.f input,.f select,.f textarea{width:100%;min-height:50px;background:var(--ink);color:var(--cream);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:500 16px var(--body)}
+.f textarea{min-height:92px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:2px solid var(--wood);outline-offset:1px;border-color:var(--wood)}
+.f .err{color:var(--err);font-size:13px;min-height:0}
+.f .err:empty{display:none}
+.f [aria-invalid="true"]{border-color:var(--err)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.row2{grid-template-columns:1fr}}
+.total{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:16px 0;margin:6px 0 18px;border-block:1px solid var(--line)}
+.total span{color:var(--muted)}
+.total strong{font-family:var(--display);font-size:36px;font-weight:600;font-variant-numeric:tabular-nums}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.small{color:var(--muted);font-size:13px;margin-top:12px}
+.done h3{font-size:26px}
+.done p{margin-top:10px;color:#d4cdbd}
+.done .oid{display:inline-block;margin-top:14px;font-family:var(--display);font-size:24px;color:var(--wood)}
+
+footer{border-top:1px solid var(--line);padding-block:36px;color:var(--muted);font-size:14px;display:grid;gap:14px}
+
+/* sticky mobile CTA */
+.stick{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
+  background:rgba(20,23,26,.94);border-top:1px solid var(--line);display:none}
+.stick .btn{width:100%}
+@media(max-width:720px){.stick{display:block}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top">RISKS<b>247</b></a>
+    <nav class="main" aria-label="Galvenā navigācija">
+      <a href="#cenas">Cenas</a>
+      <a href="#ka-pasutit">Kā pasūtīt</a>
+      <a href="#piegade">Piegāde</a>
+      <a class="btn btn-primary" href="#pasutit" style="min-height:42px;padding:0 20px">Pasūtīt</a>
+    </nav>
+  </header>
+</div>
+
+<main id="top">
+  <div class="wrap">
+    <section class="hero" style="border-top:0">
+      <div class="hero-grid">
+        <div>
+          <h1>Malka ar piegādi Ventspilī un apkārtnē</h1>
+          <p class="lead">Izvēlieties daudzumu no 10 līdz 50 beramkubikmetriem. Cenu redzat uzreiz: 40 € par beramkubikmetru.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#pasutit">Pasūtīt malku</a>
+            <a class="btn btn-ghost" href="#cenas">Skatīt cenas</a>
+          </div>
+          <dl class="facts">
+            <div><dt>Minimālais pasūtījums</dt><dd>10 ber. m³</dd></div>
+            <div><dt>Cena</dt><dd>40 € par ber. m³</dd></div>
+            <div><dt>Piegāde</dt><dd>Ventspils, Kuldīga, Talsi, Liepāja</dd></div>
+          </dl>
+        </div>
+        <svg class="rings" viewBox="0 0 600 600" aria-hidden="true" focusable="false" id="rings"></svg>
+      </div>
+    </section>
+  </div>
+
+  <div class="band">
+    <div class="wrap">
+      <section id="cenas" style="border-top:0">
+        <h2>Cenas</h2>
+        <p class="sub">Cena par beramkubikmetru ir vienāda jebkuram daudzumam no 10 līdz 50 ber. m³.</p>
+        <div class="grid" id="grid"></div>
+        <p class="note">Daudzuma pieejamību un piegādes laiku apstiprinām pēc pasūtījuma saņemšanas.</p>
+      </section>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section id="ka-pasutit">
+      <h2>Kā pasūtīt</h2>
+      <ol class="steps">
+        <li><h3>Izvēlieties daudzumu</h3><p>Kopējā cena parādās uzreiz, mainot daudzumu.</p></li>
+        <li><h3>Aizpildiet pasūtījumu</h3><p>Norādiet vārdu, tālruni, pilsētu un piegādes adresi.</p></li>
+        <li><h3>Apstiprinām piegādi</h3><p>Sazināsimies ar jums, lai vienotos par piegādes laiku.</p></li>
+      </ol>
+    </section>
+
+    <section id="produkts">
+      <div class="two">
+        <div>
+          <h2>Kas ir beramkubikmetrs?</h2>
+          <p class="sub" style="max-width:none">Beramkubikmetrs (ber. m³) ir brīvi sabērtas malkas tilpums. Tas atšķiras no kārtotas malkas kubikmetra, jo starp pagalēm paliek gaisa spraugas.</p>
+        </div>
+        <div>
+          <figure class="fig"><svg id="pile" viewBox="0 0 360 240" role="img" aria-label="Malkas kaudzes ilustrācija"></svg><figcaption>Ilustrācija. Faktiskā prece var atšķirties.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="piegade">
+      <h2>Piegāde</h2>
+      <p class="sub">Piegādājam šajās pilsētās un to apkārtnē:</p>
+      <ul class="chips"><li>Ventspils</li><li>Kuldīga</li><li>Talsi</li><li>Liepāja</li></ul>
+      <p class="sub" style="margin-top:18px">Atrodaties citur Kurzemē? Pasūtījumā izvēlieties “Cita vieta”. Pārbaudīsim, vai varam piegādāt, un atbildēsim ar piedāvājumu.</p>
+    </section>
+
+    <section id="pasutit">
+      <div class="formwrap">
+        <div>
+          <h2>Pasūtījums</h2>
+          <p class="sub">Pasūtījums ir pieprasījums. Piegādi apstiprinām mēs, sazinoties ar jums.</p>
+        </div>
+        <div id="formArea">
+          <form id="orderForm" novalidate>
+            <div class="f">
+              <label for="qty">Daudzums</label>
+              <select id="qty" name="qty"></select>
+            </div>
+            <div class="total" aria-live="polite"><span>Kopā</span><strong id="total">€400</strong></div>
+            <div class="f">
+              <label for="name">Vārds un uzvārds</label>
+              <input id="name" name="name" autocomplete="name" required>
+              <div class="err" id="e-name"></div>
+            </div>
+            <div class="row2">
+              <div class="f">
+                <label for="phone">Tālrunis</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+371 2X XXX XXX" required>
+                <div class="err" id="e-phone"></div>
+              </div>
+              <div class="f">
+                <label for="city">Pilsēta vai piegādes vieta</label>
+                <select id="city" name="city" required>
+                  <option value="">Izvēlieties</option>
+                  <option>Ventspils</option><option>Kuldīga</option><option>Talsi</option><option>Liepāja</option>
+                  <option value="Cita vieta">Cita vieta (pieprasīt piedāvājumu)</option>
+                </select>
+                <div class="err" id="e-city"></div>
+              </div>
+            </div>
+            <div class="f">
+              <label for="address">Piegādes adrese</label>
+              <input id="address" name="address" autocomplete="street-address" required>
+              <div class="err" id="e-address"></div>
+            </div>
+            <div class="f">
+              <label for="notes">Norādes piegādei (nav obligāti)</label>
+              <textarea id="notes" name="notes"></textarea>
+            </div>
+            <div class="hp" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+            <button class="btn btn-primary" id="submit" type="submit" style="width:100%">Nosūtīt pasūtījumu</button>
+            <p class="err" id="formMsg" role="alert" style="color:var(--err);font-size:14px;margin-top:12px"></p>
+            <p class="small">Nospiežot pogu vienreiz, pasūtījums tiek nosūtīts vienu reizi.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="brand">RISKS<b>247</b></div>
+      <!-- LEGAL-DETAILS-PLACEHOLDER: company name, reg. no., contact details to be supplied by owner -->
+    </footer>
+  </div>
+</main>
+
+<div class="stick"><a class="btn btn-primary" href="#pasutit">Pasūtīt malku</a></div>
+
+<script>
+(function(){
+  var PRICE=40, QTYS=[10,15,20,25,30,35,40,45,50];
+  var fmt=function(n){return "€"+n.toLocaleString("en-US")};
+
+  // growth-ring mark
+  var svg=document.getElementById("rings"), ns="http://www.w3.org/2000/svg", i, c, r;
+  var cols=["#c8a35a","#8a6f35","#d6b370","#5e5028"];
+  for(i=0;i<15;i++){
+    r=22+i*18.5;
+    c=document.createElementNS(ns,"circle");
+    c.setAttribute("cx",300+Math.sin(i*1.7)*5);
+    c.setAttribute("cy",300+Math.cos(i*1.3)*5);
+    c.setAttribute("r",r);
+    c.setAttribute("pathLength","1");
+    c.setAttribute("stroke",cols[i%4]);
+    c.setAttribute("stroke-width",(i%3===0?3.2:1.6));
+    c.setAttribute("stroke-opacity",(0.95-i*0.045).toFixed(2));
+    c.style.animationDelay=(i*70)+"ms";
+    svg.appendChild(c);
+  }
+
+  // illustrative log pile
+  var pile=document.getElementById("pile"), rows=[7,6,7,6,7], rad=24, k, j, lg, cx, cy, n;
+  for(k=0;k<rows.length;k++){
+    for(j=0;j<rows[k];j++){
+      cx=(360-rows[k]*rad*2)/2+rad+j*rad*2+(k%2?0:0); cy=214-rad-k*rad*1.76;
+      lg=document.createElementNS(ns,"g");
+      n=document.createElementNS(ns,"circle"); n.setAttribute("cx",cx); n.setAttribute("cy",cy); n.setAttribute("r",rad-1.5); n.setAttribute("fill",["#2f2a22","#3a3226","#332d24"][(j+k)%3]); n.setAttribute("stroke","#8a6f35"); n.setAttribute("stroke-width","1.5"); lg.appendChild(n);
+      [15,8,3].forEach(function(rr){var m=document.createElementNS(ns,"circle");m.setAttribute("cx",cx);m.setAttribute("cy",cy);m.setAttribute("r",rr);m.setAttribute("fill","none");m.setAttribute("stroke","#c8a35a");m.setAttribute("stroke-opacity",".45");m.setAttribute("stroke-width","1");lg.appendChild(m);});
+      pile.appendChild(lg);
+    }
+  }
+  // price cards
+  var grid=document.getElementById("grid"), sel=document.getElementById("qty");
+  QTYS.forEach(function(q){
+    var d=document.createElement("div"); d.className="card"+(q===10?" min":"");
+    d.innerHTML=(q===10?'<span class="tag">Minimālais pasūtījums</span>':'')+
+      '<span class="q">'+q+' ber. m³</span><span class="p">'+fmt(q*PRICE)+'</span><span class="u">40 € par ber. m³</span>';
+    var b=document.createElement("a"); b.className="btn btn-ghost"; b.href="#pasutit"; b.textContent="Izvēlēties";
+    b.addEventListener("click",function(){sel.value=String(q);update();});
+    d.appendChild(b); grid.appendChild(d);
+    var o=document.createElement("option"); o.value=String(q); o.textContent=q+" ber. m³ ("+fmt(q*PRICE)+")"; sel.appendChild(o);
+  });
+  var big=document.createElement("div"); big.className="card big";
+  big.innerHTML='<div><h3>Virs 50 ber. m³</h3><p class="u" style="margin-top:6px">Pieprasīt individuālu piedāvājumu</p></div>';
+  var bb=document.createElement("a"); bb.className="btn btn-ghost"; bb.href="#pasutit"; bb.textContent="Pieprasīt piedāvājumu";
+  bb.addEventListener("click",function(){sel.value="custom";update();});
+  big.appendChild(bb); grid.appendChild(big);
+  var oc=document.createElement("option"); oc.value="custom"; oc.textContent="Virs 50 ber. m³ (individuāls piedāvājums)"; sel.appendChild(oc);
+
+  var total=document.getElementById("total");
+  function update(){ total.textContent = sel.value==="custom" ? "Individuāls piedāvājums" : fmt(parseInt(sel.value,10)*PRICE); total.style.fontSize = sel.value==="custom" ? "20px" : ""; }
+  sel.addEventListener("change",update); update();
+
+  // order form -> /api/order (server validates price, creates the order ID)
+  var form=document.getElementById("orderForm"), area=document.getElementById("formArea"), btn=document.getElementById("submit");
+  var key=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now())+Math.random().toString(16).slice(2), busy=false;
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function setErr(id,msg,field){document.getElementById("e-"+id).textContent=msg;var el=document.getElementById(field||id);if(msg)el.setAttribute("aria-invalid","true");else el.removeAttribute("aria-invalid");return !msg;}
+  function fail(m){busy=false;btn.disabled=false;btn.textContent="Nosūtīt pasūtījumu";document.getElementById("formMsg").textContent=m;}
+  form.addEventListener("submit",function(e){
+    e.preventDefault(); if(busy) return;
+    var ok=true, f=form.elements, digits=f.phone.value.replace(/\D/g,"");
+    ok=setErr("name",f.name.value.trim().length<3?"Ievadiet vārdu un uzvārdu.":"","name")&&ok;
+    ok=setErr("phone",digits.length<8?"Ievadiet tālruņa numuru (vismaz 8 cipari).":"","phone")&&ok;
+    ok=setErr("city",!f.city.value?"Izvēlieties pilsētu vai piegādes vietu.":"","city")&&ok;
+    ok=setErr("address",f.address.value.trim().length<4?"Ievadiet piegādes adresi.":"","address")&&ok;
+    if(!ok){var first=form.querySelector('[aria-invalid="true"]'); if(first) first.focus(); return;}
+    busy=true; btn.disabled=true; btn.textContent="Sūta…"; document.getElementById("formMsg").textContent="";
+    var body={key:key,qty:f.qty.value,name:f.name.value,phone:f.phone.value,city:f.city.value,address:f.address.value,notes:f.notes.value,website:f.website.value};
+    var ctl=new AbortController(), to=setTimeout(function(){ctl.abort()},15000);
+    fetch("/api/order",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(body),signal:ctl.signal})
+      .then(function(r){return r.json().catch(function(){return {}}).then(function(j){return {s:r.status,j:j}})})
+      .then(function(x){
+        clearTimeout(to);
+        if(x.s===200&&x.j.ok){
+          area.innerHTML='<div class="done" role="status"><h3>Paldies!</h3><p>'+esc(x.j.message)+'</p><span class="oid">'+esc(x.j.orderId)+'</span></div>';
+          area.querySelector(".done").scrollIntoView({block:"center"});
+        } else if(x.s===503){ fail("Pasūtījumu pieņemšana šobrīd nav pieejama. Lūdzu, mēģiniet vēlāk."); }
+        else { fail(x.j.error||"Neizdevās nosūtīt. Lūdzu, mēģiniet vēlreiz."); }
+      })
+      .catch(function(){clearTimeout(to);fail("Savienojuma kļūda. Pārbaudiet internetu un mēģiniet vēlreiz.");});
+  });
+})();
+</script>
+</body>
+</html>
